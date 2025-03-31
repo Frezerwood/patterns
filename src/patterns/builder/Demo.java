@@ -25,6 +25,10 @@ public class Demo {
         Car car = builder.getResult();
         System.out.println("Car built:\n" + car.getCarType());
 
+        director.constructSUV(builder);
+        car = builder.getResult();
+        System.out.println("Car built:\n" + car.getCarType());
+
 
         CarManualBuilder manualBuilder = new CarManualBuilder();
 
@@ -32,6 +36,11 @@ public class Demo {
         director.constructSportsCar(manualBuilder);
         Manual carManual = manualBuilder.getResult();
         System.out.println("\nCar manual built:\n" + carManual.print());
+
+        manualBuilder = new CarManualBuilder();
+        director.constructSUV(manualBuilder);
+        Manual carManual2 = manualBuilder.getResult();
+        System.out.println("\nCar manual built:\n" + carManual2.print());
     }
 
 }
